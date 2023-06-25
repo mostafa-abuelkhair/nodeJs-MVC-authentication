@@ -1,6 +1,5 @@
 
 let products = [];
-let categories = [];
 
 exports.get = () => { return products }
 

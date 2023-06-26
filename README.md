@@ -1,2 +1,2 @@
-# Task to practising MVC and Authentication with JWT tokens
+Task to practising MVC and Authentication with JWT tokens
 

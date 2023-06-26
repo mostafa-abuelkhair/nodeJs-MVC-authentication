@@ -13,9 +13,7 @@ exports.login  =  (req,res) => {
     }).noUnknown();
 
     try{
-        vScheme.validateSync(user, {
-            strict: true,
-          });
+        vScheme.validateSync(user, {strict: true});
 
         res.send( usersModel.checkUser(user) );
     }
@@ -36,9 +34,7 @@ exports.register  =  (req,res) => {
     }).noUnknown();
 
     try{
-        vScheme.validateSync(user, {
-            strict: true,
-          });
+        vScheme.validateSync(user, {strict: true});
 
         if ( user.password !== user.passwordRepeat ) throw "password and password repeat are not equal" 
 

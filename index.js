@@ -17,7 +17,7 @@ app.use("/register",registerRouter);
 
 app.get("/",(req,res)=>{
 
-    res.send("Hello There,  you can use /products and /categories");
+    res.send("Hello There,  you can use /products , /categories , /login , /register");
 
 })
 

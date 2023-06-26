@@ -21,7 +21,7 @@ exports.find = (id) => {
     
     p.category = categories.find( c => c.id === p.category_id );
 
-    if(p.category === undefined){ return "category not found"}
+    if(p.category === undefined){ return "there is no category found with this category id"}
 
     else{
     products.push(p);

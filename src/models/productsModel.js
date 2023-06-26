@@ -1,10 +1,10 @@
 
+const categoriesModel = require('./categoriesModel');
+
 let products = [];
 
 exports.get = () => { return products }
 
-
-const categoriesModel = require('../models/categoriesModel');
 
 exports.find = (id) => { 
 

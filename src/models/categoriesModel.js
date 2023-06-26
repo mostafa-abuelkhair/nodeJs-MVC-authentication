@@ -38,7 +38,7 @@ exports.find = (id) => {
 
     let c = categories[i];
     
-    if(i===-1){return "category not found"}
+    if(i===-1){return "no category found with this category id "}
 
     else{categories.splice(i,1);}
 

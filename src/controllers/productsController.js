@@ -30,9 +30,7 @@ exports.createProduct  =  (req,res) => {
     }).noUnknown();
 
     try{
-        vScheme.validateSync(product, {
-            strict: true,
-          });
+        vScheme.validateSync(product, {strict: true});
 
         res.send( productsModel.create(product) );
     }
@@ -49,15 +47,13 @@ exports.updateProduct =  (req,res) => {
     let product = req.body;
 
     const vScheme = yup.object({
-        name: yup.string().min(3, 'length Must be more than 3'),
-        price: yup.number(),
-        category_id: yup.number()
+        name: yup.string().required().min(3, 'length Must be more than 3'),
+        price: yup.number().required(),
+        category_id: yup.number().required()
     }).noUnknown();
 
     try{
-        vScheme.validateSync(product, {
-            strict: true,
-          });
+        vScheme.validateSync(product, {strict: true});
 
         res.send( productsModel.update(id,product));
     }

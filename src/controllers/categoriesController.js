@@ -27,9 +27,7 @@ exports.createCategory =  (req,res) => {
     }).noUnknown();
 
     try{
-        vScheme.validateSync(category, {
-            strict: true,
-          });
+        vScheme.validateSync(category, {strict: true});
 
         res.send( categoriesModel.create(category) );
     }
@@ -46,13 +44,11 @@ exports.updateCategory =  (req,res) => {
     let category = req.body;
 
     const vScheme = yup.object({
-        name: yup.string().min(3, 'length Must be more than 3'),
+        name: yup.string().required().min(3, 'length Must be more than 3'),
     }).noUnknown();
 
     try{
-        vScheme.validateSync(category, {
-            strict: true,
-          });
+        vScheme.validateSync(category, { strict: true });
 
         res.send( categoriesModel.update(id,category));
     }

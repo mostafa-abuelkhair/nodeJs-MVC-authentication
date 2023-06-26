@@ -1,3 +1,4 @@
+const auth = require('../middlewares/authentication');
 
 let users = [];
 
@@ -8,9 +9,13 @@ exports.addUser = (user) => {
     if ( users.find( u=> u.email===user.email ) ){ return "this email is already registred" }
 
     else{
+
     delete user.passwordRepeat;
+    user.token = auth.generateToken({email: user.email})
     users.push(user);
+    user.success = true;
     return user;
+
     }
  }
 
